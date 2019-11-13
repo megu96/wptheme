@@ -1,0 +1,51 @@
+header {
+    font-family: 'Abril Display';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-img {
+    max-width: 110px;
+    img {
+        width: 100%;
+        border-radius: 50%;
+    }
+}
+
+.title-area {
+    margin-left: 30px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.name {
+    margin-top: 8px;
+    color: $gray;
+}
+
+.nav-btn {
+    width: 160px;
+    height: 45px;
+    text-align: center;
+    border: solid 3px $red;
+    border-radius: 40px;
+    position: relative;
+    p {
+        font-size: 25px;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
