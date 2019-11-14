@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <header>
+    <div class="inner hd-inner">
     <div class="user-area">
         <h1 class="user-img">
             <a href="<?php echo esc_url( home_url('/')); ?>">
@@ -10,28 +11,33 @@
         <p class="title">Works.</p>
         </div>
         </div>
-        <div class="nav-btn">
+
+        <div class="nav-btn single-btn">
             <p>menu</p>
-        </div>
-        <!-- <nav>
-        <ul>
-            <li><a href="#">コンテンツA</a></li>
-            <li><a href="#">コンテンツB</a></li>
-            <li><a href="#">コンテンツC</a></li>
-        </ul>
-        </nav> -->
         
+        <nav class="single-nav">
+        <ul>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Conatct</a></li>
+        </ul>
+        </nav>
+        </div>
+    </div>       
 </header>
 
 <main>
     <section class="article">
+    <div class="inner">
+    <div class="article__wrap">
     <?php while(have_posts()): the_post(); ?>
-
+    <div class="article__img">
     <?php
     if(has_post_thumbnail()) {
         the_post_thumbnail('large', array( 'class' => 'single main-image' ));
         }
     ?>
+    </div>
     
     <!-- <p><?php the_category(","); ?> </p>
     <p><?php the_time("Y-n-j"); ?></p> -->
@@ -49,6 +55,8 @@
 
 <?php comments_template(); ?>
 
+</div>
+</div>
 </section>
 </main>
 

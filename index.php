@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <header>
+    <div class="inner hd-inner">
     <div class="user-area">
         <h1 class="user-img">
             <a href="<?php echo esc_url( home_url('/')); ?>">
@@ -11,20 +12,31 @@
         <p class="name">- Megumi Tsukakoshi</p>
         </div>
         </div>
-        <div class="nav-btn">
+
+        <div class="nav-toggle nav-btn">
             <p>menu</p>
         </div>
-        <!-- <nav>
-        <ul>
-            <li><a href="#">コンテンツA</a></li>
-            <li><a href="#">コンテンツB</a></li>
-            <li><a href="#">コンテンツC</a></li>
-        </ul>
-        </nav> -->
+
         
+    </div>       
 </header>
 
+<div class="menu" id="menu">
+    <div class="menu__inner">
+        <div class="menu__top">
+        <h5 class="menu__title">NAVIGATION</h5>
+        <div class="nav-toggle nav-close" id="nav-close">←</div> 
+    </div>                   
+        <ul class="menu__ul">
+            <li class="menu__item"><a href="">Works</a></li>
+            <li class="menu__item"><a href="">About</a></li>
+            <li class="menu__item"><a href="">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
 <section class="index-posts">
+    <div class="inner index-inner">
     
 <?php
 if(have_posts()):
@@ -67,8 +79,16 @@ if(have_posts()):
     endif;
 ?>
 
+</div>
 </section>
 
-<?php the_posts_pagination(); ?>
+<?php
+	the_posts_pagination(
+		array(
+			'prev_text' => '<i class="fas fa-angle fa-angle-left"></i>',
+			'next_text' => '<i class="fas fa-angle fa-angle-right"></i>'
+		)
+	);
+?>
 
 <?php get_footer(); ?>

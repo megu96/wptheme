@@ -117,19 +117,133 @@ body, html {
 }
 
 body {
+  max-width: 1366px;
+  margin: 0 auto;
   background: #F6ECEA;
   color: #D2564C;
   font-size: 16px;
 }
 
-.container {
+.inner {
+  width: 100%;
+  padding: 5% 10% 0;
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.nav-btn {
+  width: 160px;
+  height: 45px;
+  text-align: center;
+  border: solid 3px #D2564C;
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-btn p {
+  font-size: 25px;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.nav-close {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-close.open {
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.menu {
+  width: 100%;
+  height: 100vh;
   max-width: 1366px;
-  width: 70%;
-  margin: 10% auto 0;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10% 10% 0;
+  background: #F6ECEA;
+  font-family: 'Abril Display';
+  z-index: 9;
+}
+
+.menu__item {
+  font-size: 3rem;
+  margin-top: 3rem;
+  position: relative;
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu__item a {
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu__item a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  content: "";
+  width: 0;
+  height: 1px;
+  background: #000;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu__item a:hover {
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  padding-left: 4rem;
+}
+
+.menu__item a:hover::before {
+  width: 2rem;
+}
+
+.menu__title {
+  font-size: 1rem;
+  color: #968988;
+  font-weight: normal;
+}
+
+.menu__top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header {
+  width: 100%;
   font-family: 'Abril Display';
+}
+
+.hd-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,29 +290,11 @@ header {
   color: #968988;
 }
 
-.nav-btn {
-  width: 160px;
-  height: 45px;
-  text-align: center;
-  border: solid 3px #D2564C;
-  border-radius: 40px;
-  position: relative;
-}
-
-.nav-btn p {
-  font-size: 25px;
-  line-height: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
 .index-posts {
   width: 100%;
-  min-width: 485px;
-  margin-top: 100px;
+}
+
+.index-posts .index-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,6 +306,10 @@ header {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.index-posts.open {
+  display: none;
 }
 
 .index-posts__item {
@@ -239,6 +339,13 @@ header {
   opacity: 1;
 }
 
+@media screen and (max-width: 1040px) {
+  .index-posts__item {
+    width: 30%;
+    height: 30%;
+  }
+}
+
 .index-posts .mask {
   position: absolute;
   top: 0;
@@ -265,8 +372,49 @@ header {
   text-align: center;
 }
 
-.article {
-  margin-top: 10%;
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination .fa-angle {
+  font-size: 20px;
+}
+
+.pagination .page-numbers {
+  margin-right: 10px;
+}
+
+.single-btn {
+  position: relative;
+}
+
+.single-nav {
+  width: 100%;
+  position: absolute;
+  top: 47px;
+  left: 0;
+  border: 3px solid #D2564C;
+  padding: 12px 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.single-nav ul > li:nth-child(2) {
+  margin: 6px 0;
+}
+
+.article__wrap {
+  background: #fff;
+  padding: 10%;
+}
+
+.article__img {
+  width: 100%;
+}
+
+.article__img img {
+  width: 100%;
 }
 
 .article p {

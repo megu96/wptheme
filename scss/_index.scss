@@ -1,11 +1,15 @@
+
 .index-posts {
     width: 100%;
-    min-width: 485px;
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    .index-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        }
+        &.open {
+            display: none;
+        }
     &__item {
         width: 31.5%;;
         height: 31.5%;
@@ -27,6 +31,10 @@
                 transition: 0.8s;
                 opacity: 1;
             }
+        }
+        @include tab {
+            width: 30%;
+            height: 30%;
         }
     }
     .mask {
@@ -50,5 +58,16 @@
             line-height: 30px;
             text-align: center;
         }
+    }
+}
+
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+    .fa-angle {
+        font-size: 20px;
+    }
+    .page-numbers {
+        margin-right: 10px;
     }
 }
