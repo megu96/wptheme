@@ -22,7 +22,7 @@
 </header>
 
 <div class="menu" id="menu">
-    <div class="menu__inner">
+    <div class="menu__wrap">
         <div class="menu__top">
         <h5 class="menu__title">NAVIGATION</h5>
         <div class="nav-toggle nav-close" id="nav-close">←</div> 

@@ -238,6 +238,12 @@ body {
           align-items: center;
 }
 
+footer {
+  text-align: center;
+  font-size: 10px;
+  margin: 5% 0 10px;
+}
+
 header {
   width: 100%;
   font-family: 'Abril Display';
@@ -419,15 +425,49 @@ header {
 
 .article p {
   font-size: 16px;
+  color: #968988;
 }
 
 .article__title {
   font-family: 'Abril Display';
-  font-size: 20px;
+  font-size: 25px;
   margin: 5% 0;
 }
 
 .bread-list {
+  font-family: 'Abril Display';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10%;
+}
+
+.bread-list .cate {
+  color: #968988;
+}
+
+.bread-item {
+  margin-left: 5px;
+}
+
+.comment-respond {
   margin-top: 5%;
+}
+
+.comment-reply-title {
+  display: none;
+}
+
+.logged-in-as {
+  display: none;
+}
+
+label {
+  font-size: 0;
+}
+
+.cate-name {
+  margin: 5% 10% 0;
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */

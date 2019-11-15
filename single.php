@@ -46,6 +46,7 @@
     
 
     <ul class="bread-list">
+        <li class="cate">Category</li>
         <li class="bread-item">
             <?php $category = get_the_category()[0]; { echo '<a href="'.get_category_link($category->term_id).'">'.$category->cat_name.'</a>';} ?>
         </li>
